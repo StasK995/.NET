@@ -47,7 +47,7 @@ class Program
             t2 = (2 * x / Math.Pow(a, 2)) * Math.Sin(a * x) -
                 ((Math.Pow(x, 2) / a - 2 / Math.Pow(a, 3)) * Math.Cos(a * x));
 
-            // Вывод результатов
+            // Результат
             Console.WriteLine($"t1 = {t1}"); ;
             Console.WriteLine($"t2 = {t2}");
         }

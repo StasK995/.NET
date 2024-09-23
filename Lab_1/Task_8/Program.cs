@@ -14,7 +14,6 @@ class Program
     {
         Console.OutputEncoding = UTF8Encoding.UTF8;
 
-        // Ввод параметров
         Console.Write("Введіть поріг помилки (eps): ");
         double eps = double.Parse(Console.ReadLine());
 
