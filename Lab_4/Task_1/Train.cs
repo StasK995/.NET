@@ -1,85 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
 
 public class Train
 {
-    // Поля класу
-    private string destination;
-    private string trainNumber;
-    private DateTime departureTime;
-    private int totalSeats;
-    private int compartmentSeats;
-    private int sleeperSeats;
+    // Властивості класу з автоматичними гетерами та сетерами
+    public string Destination { get; set; }      // Пункт призначення
+    public int TrainNumber { get; set; }         // Номер поїзда
+    public TimeSpan DepartureTime { get; set; }  // Час відправлення
+    public int CommonSeats { get; set; }         // Кількість спільних місць
+    public int CompartmentSeats { get; set; }    // Кількість купейних місць
+    public int ReservedSeats { get; set; }       // Кількість плацкартних місць
 
-    // Конструктор класу
-    public Train(string destination, string trainNumber, DateTime departureTime, int totalSeats, int compartmentSeats, int sleeperSeats)
+    // Конструктор за замовчуванням
+    public Train() { }
+
+    // Конструктор з параметрами
+    public Train(string destination, int trainNumber, TimeSpan departureTime, int commonSeats, int compartmentSeats, int reservedSeats)
     {
-        this.destination = destination;
-        this.trainNumber = trainNumber;
-        this.departureTime = departureTime;
-        this.totalSeats = totalSeats;
-        this.compartmentSeats = compartmentSeats;
-        this.sleeperSeats = sleeperSeats;
+        // Ініціалізація властивостей
+        Destination = destination;
+        TrainNumber = trainNumber;
+        DepartureTime = departureTime;
+        CommonSeats = commonSeats;
+        CompartmentSeats = compartmentSeats;
+        ReservedSeats = reservedSeats;
     }
 
-    public string Destination
-    {
-        get { return destination; }
-        set { destination = value; }
-    }
-
-    public string TrainNumber
-    {
-        get { return trainNumber; }
-        set { trainNumber = value; }
-    }
-
-    public DateTime DepartureTime
-    {
-        get { return departureTime; }
-        set { departureTime = value; }
-    }
-
-    public int TotalSeats
-    {
-        get { return totalSeats; }
-        set { totalSeats = value; }
-    }
-
-    public int CompartmentSeats
-    {
-        get { return compartmentSeats; }
-        set { compartmentSeats = value; }
-    }
-
-    public int SleeperSeats
-    {
-        get { return sleeperSeats; }
-        set { sleeperSeats = value; }
-    }
-
-    // Метод для виведення інформації про поїзд
+    // Метод show для відображення інформації про поїзд
     public void Show()
     {
-        Console.WriteLine($"Номер поїзда: {trainNumber}");
-        Console.WriteLine($"Пункт призначення: {destination}");
-        Console.WriteLine($"Час відправлення: {departureTime}");
-        Console.WriteLine($"Кількість місць: {totalSeats}");
-        Console.WriteLine($"Купейні місця: {compartmentSeats}");
-        Console.WriteLine($"Плацкартні місця: {sleeperSeats}");
-        Console.WriteLine();
+        Console.WriteLine($"\nTrain Number: {TrainNumber}, Destination: {Destination}, Departure Time: {DepartureTime}, Common Seats: {CommonSeats}, Compartment Seats: {CompartmentSeats}, Reserved Seats: {ReservedSeats}");
     }
 
-    // Додатковий метод для перевірки наявності загальних місць
-    public bool HasAvailableSeats()
+    // Метод для перевірки наявності спільних місць
+    public bool HasCommonSeats()
     {
-        bool hasSeats = totalSeats > 0;
-        return hasSeats;
+        return CommonSeats > 0;
     }
 
-    // Додатковий метод для перевірки часу відправлення
-    public bool IsDepartureAfter(DateTime time)
+    // Додатковий метод: Перевірка, чи поїзд відправляється після заданої години
+    public bool DepartsAfter(TimeSpan time)
     {
-        return departureTime > time;
+        return DepartureTime > time;
     }
 }

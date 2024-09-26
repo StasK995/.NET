@@ -1,50 +1,83 @@
-﻿public class Program
+﻿using System;
+using System.Collections.Generic;
+
+class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        List<Train> trains = new List<Train>
-        {                                          //рік місяць день час
-            new Train("Київ", "123A", new DateTime(2024, 9, 20, 15, 30, 0), 100, 10, 40),
-            new Train("Львів", "456B", new DateTime(2024, 9, 21, 18, 45, 0), 150, 20, 60),
-            new Train("Одеса", "789C", new DateTime(2024, 9, 20, 10, 15, 0), 80, 15, 30)
-        };
+        Console.InputEncoding = System.Text.Encoding.UTF8;
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        List<Train> trains = new List<Train>();
 
-        // Введенняпункту призначення та часу
-        Console.Write("Введіть пункт призначення: ");
-        string destination = Console.ReadLine();
+        // Додавання випадкових поїздів до списку
+        Random rand = new Random();
+        string[] destinations = { "Kyiv", "Lviv", "Odessa", "Kharkiv", "Dnipro" };
 
-        Console.Write("Введіть час (формат HH:MM): ");
-        TimeSpan timeSpan = TimeSpan.Parse(Console.ReadLine());
-        DateTime time = new DateTime(1, 1, 1, timeSpan.Hours, timeSpan.Minutes, 0);
+        for (int i = 0; i < 5; i++)
+        {
+            string destination = destinations[rand.Next(destinations.Length)];
+            int trainNumber = rand.Next(100, 999);
+            TimeSpan departureTime = new TimeSpan(rand.Next(0, 24), rand.Next(0, 60), 0);
+            int commonSeats = rand.Next(0, 100);
+            int compartmentSeats = rand.Next(0, 50);
+            int reservedSeats = rand.Next(0, 50);
 
-        // Виведення списку поїздів 
-        Console.WriteLine($"\nПоїзди, що прямують до {destination}:");
+            trains.Add(new Train(destination, trainNumber, departureTime, commonSeats, compartmentSeats, reservedSeats));
+        }
+
+        // Вивід усіх поїздів
+        Console.WriteLine("Всі:");
         foreach (var train in trains)
         {
-            if (train.Destination.Equals(destination, StringComparison.OrdinalIgnoreCase))
+            train.Show();
+        }
+
+        // Додавання нового поїзда
+        Console.WriteLine("\nДодавання нового з номером 999");
+        trains.Add(new Train("Zaporizhzhia", 999, new TimeSpan(14, 30, 0), 50, 30, 20));
+
+        Console.WriteLine("Всі після додавання:");
+        foreach (var train in trains)
+        {
+            train.Show();
+        } 
+
+        // Редагування існуючого поїзда
+        Console.WriteLine("\nРедагування поїзда з номером 999...");
+        foreach (var train in trains)
+        {
+            if (train.TrainNumber == 999)
             {
-                train.Show();
+                train.Destination = "Odesa"; // Використовуємо властивість
+                train.CommonSeats = 60; // Використовуємо властивість
             }
         }
 
-        // Виведення списку поїздів за пунктом призначення та часом відправлення
-        Console.WriteLine($"\nПоїзди, що прямують до {destination} і відправляються після {timeSpan}:");
+        Console.WriteLine("Всі після редагування:");
         foreach (var train in trains)
         {
-            if (train.Destination.Equals(destination, StringComparison.OrdinalIgnoreCase) && train.IsDepartureAfter(time))
-            {
-                train.Show();
-            }
+            train.Show();
         }
 
-        // Виведення списку поїздів з наявними місцями
-        Console.WriteLine($"\nПоїзди, що прямують до {destination} і мають доступні місця:");
+        // Видалення поїзда за критерієм (наприклад, поїзд до "Lviv")
+        Console.WriteLine("\nВидалення поїздів до Lviv...");
+        trains.RemoveAll(t => t.Destination == "Lviv"); // Використовуємо властивість
+
+        // Вивід списку після редагування
+        Console.WriteLine("\nОновлений список поїздів:");
         foreach (var train in trains)
         {
-            if (train.Destination.Equals(destination, StringComparison.OrdinalIgnoreCase) && train.HasAvailableSeats())
-            {
+            train.Show();
+        }
+
+        // Фільтрація поїздів за пунктом призначення та наявністю спільних місць
+        Console.WriteLine("\nВведіть пункт призначення для пошуку поїздів зі спільними місцями:");
+        string searchDestination = Console.ReadLine();
+        Console.WriteLine($"\nПоїзди до {searchDestination} зі спільними місцями:");
+        foreach (var train in trains)
+        {
+            if (train.Destination == searchDestination && train.HasCommonSeats()) // Використовуємо властивість
                 train.Show();
-            }
         }
     }
 }
