@@ -8,7 +8,9 @@ class Program
 {
     static void Main()
     {
-        Console.OutputEncoding = UTF8Encoding.UTF8;
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        Console.InputEncoding = System.Text.Encoding.Unicode;
+
         Console.Write("Введіть текст для шифрування:");
         string input = Console.ReadLine();
 
@@ -28,8 +30,9 @@ class Program
 
         foreach (char c in text)
         {
-            
-            if (c >= 'А' && c <= 'Я')
+
+            if ((c >= 'А' && c <= 'Я') || c == 'Є' || c == 'І' || c == 'Ї' || c == 'Й' || c == 'Ґ' || c == 'Ч' || c == 'Ш' || c == 'Щ' || c == 'Ь' || c == 'Ю' || c == 'Я')
+
             {
                 count++;
             }
@@ -64,15 +67,16 @@ class Program
     static string DeleteSmallLetter(string text)
     {
         string[] words = text.Split(' ');
-        string result = "";
+        StringBuilder result = new StringBuilder(); // Використання StringBuilder для накопичення рядків
+
 
         foreach (string word in words)
         {
-            if (word.Length > 0 && !(word[0] >= 'а' && word[0] <= 'я'))
+            if (word.Length > 0 && !(word[0] >= 'а' && word[0] <= 'я' || word[0] == 'і')) // перевырка на малу літеру і
             {
-                result += word + " ";
+                result.Append(word + " "); // Додаємо слово до StringBuilder
             }
         }
-        return result;
+        return result.ToString().Trim(); // Повертаємо результат без зайвого пробілу
     }
 }

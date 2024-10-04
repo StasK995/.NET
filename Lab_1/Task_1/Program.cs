@@ -11,7 +11,7 @@ class Programm
 { 
     static void Main()
     {
-        Console.OutputEncoding = UTF8Encoding.UTF8;
+
         string name1,name2,name3;
         string author1,author2,author3;
         int a1,a2,a3;

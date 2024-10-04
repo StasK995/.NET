@@ -5,6 +5,9 @@ class Program
 {
     static void Main()
     {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        Console.InputEncoding = System.Text.Encoding.Unicode;
+
         Console.Write("Введіть текст для шифрування:");
         string input = Console.ReadLine();
 
@@ -46,12 +49,10 @@ class Program
     static string ReverseWord(string word)
     {
         char[] charArray = new char[word.Length];
-        int index = 1;
 
-        foreach (char c in word)
+        for (int i = 0; i < word.Length; i++)
         {
-            charArray[word.Length - index] = c;
-            index++;
+            charArray[word.Length - 1 - i] = word[i];
         }
 
         return new string(charArray);

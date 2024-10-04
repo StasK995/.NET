@@ -18,7 +18,7 @@ public class Stack
     }
 
     // Перевантажений оператор для додавання елемента в стек
-    public static Stack operator +(Stack stack, int value)
+    public static Stack Push(Stack stack, int value)
     {
         // Перевіряємо, чи стек переповнений
         if (stack._size >= stack._capacity)
@@ -32,7 +32,7 @@ public class Stack
     }
 
     // Перевантажений оператор для видалення елемента зі стека
-    public static Stack operator -(Stack stack)
+    public static Stack Pop(Stack stack)
     {
         // Перевіряємо, чи стек не пустий
         if (stack._size > 0)
@@ -95,4 +95,11 @@ public class Stack
             Console.WriteLine(_elements[i]);
         }
     }
+
+    public bool IsEmpty()
+    {
+        return _size == 0;
+    }
+
+
 }
