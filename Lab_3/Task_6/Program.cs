@@ -69,14 +69,15 @@ class Program
         string[] words = text.Split(' ');
         StringBuilder result = new StringBuilder(); // Використання StringBuilder для накопичення рядків
 
-
         foreach (string word in words)
         {
-            if (word.Length > 0 && !(word[0] >= 'а' && word[0] <= 'я' || word[0] == 'і')) // перевырка на малу літеру і
+            if (word.Length > 0 && !(word[0] >= 'а' && word[0] <= 'я' || word[0] == 'і')) // перевірка на малу літеру і
             {
-                result.Append(word + " "); // Додаємо слово до StringBuilder
+                result.AppendFormat("{0} ", word); // Додаємо слово до StringBuilder з використанням AppendFormat
             }
         }
+
         return result.ToString().Trim(); // Повертаємо результат без зайвого пробілу
     }
+
 }
