@@ -30,7 +30,7 @@ namespace Task_5
             Button clickedButton = sender as Button; 
             if (clickedButton != null)
             {
-                MessageBox.Show($"Вы нажали: {clickedButton.Text}");
+                MessageBox.Show($"Ви натиснули: {clickedButton.Text}");
             }
         }
 

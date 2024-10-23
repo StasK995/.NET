@@ -42,7 +42,7 @@
             this.label1.Size = new System.Drawing.Size(682, 73);
             this.label1.TabIndex = 0;
             this.label1.Text = "Рядок тексту номер 1";
-       
+            this.label1.DoubleClick += new System.EventHandler(this.label1_DoubleClick);
             // 
             // label2
             // 
@@ -53,7 +53,7 @@
             this.label2.Size = new System.Drawing.Size(682, 73);
             this.label2.TabIndex = 1;
             this.label2.Text = "Рядок тексту номер 2";
-       
+            this.label2.DoubleClick += new System.EventHandler(this.label2_DoubleClick);
             // 
             // label3
             // 
@@ -64,7 +64,7 @@
             this.label3.Size = new System.Drawing.Size(682, 73);
             this.label3.TabIndex = 2;
             this.label3.Text = "Рядок тексту номер 3";
-          
+            this.label3.DoubleClick += new System.EventHandler(this.label3_DoubleClick);
             // 
             // Form1
             // 

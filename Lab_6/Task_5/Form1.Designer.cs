@@ -41,6 +41,8 @@
             // checkBox1
             // 
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(186, 55);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(0);
             this.checkBox1.Name = "checkBox1";
@@ -88,6 +90,8 @@
             // checkBox2
             // 
             this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Location = new System.Drawing.Point(186, 88);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(0);
             this.checkBox2.Name = "checkBox2";
@@ -100,6 +104,8 @@
             // 
             // checkBox4
             // 
+            this.checkBox4.Checked = true;
+            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4.Location = new System.Drawing.Point(3, 165);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.checkBox4.Name = "checkBox4";
@@ -112,6 +118,8 @@
             // 
             // checkBox3
             // 
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Location = new System.Drawing.Point(3, 132);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.checkBox3.Name = "checkBox3";

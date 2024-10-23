@@ -65,12 +65,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.button1.MouseEnter += button1_MouseEnter;
-            this.button1.MouseLeave += button1_MouseLeave;
-            this.button2.MouseEnter += button2_MouseEnter;
-            this.button2.MouseLeave += button2_MouseLeave;
-            this.button3.MouseEnter += button3_MouseEnter;
-            this.button3.MouseLeave += button3_MouseLeave;
+
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

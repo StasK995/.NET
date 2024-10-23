@@ -13,34 +13,37 @@ namespace Task_1
             InitializeComponent();
         }
 
-   
+       
         private void Button_Click(object sender, EventArgs e)
         {
-            InitializeLabel();
+            if (label1 == null)
+            {
+                InitializeLabel(); 
+            }
         }
 
-  
         public void InitializeLabel()
         {
-            label1 = new Label() 
+            label1 = new Label()
             {
-                Location = new Point(50, 400),
-                Font = new Font("Arial", 20, FontStyle.Regular),
-                AutoSize = true,
-                ForeColor = Color.Red,
-                Text = "Кнопка была натиснута",
+                Location = new Point(50, 400), // Позиція 
+                Font = new Font("Arial", 20, FontStyle.Regular), // Шрифт і розмір
+                AutoSize = true, 
+                ForeColor = Color.Red, // Колір тексту
+                Text = "Кнопка була натиснута", // Текст 
             };
-            this.Controls.Add(label1);
+
+            this.Controls.Add(label1); 
         }
 
-     
+        // Обробка натискання кнопки для видалення 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (label1 != null) 
+            if (label1 != null)
             {
-                this.Controls.Remove(label1); 
-                label1.Dispose(); 
-                label1 = null; 
+                this.Controls.Remove(label1); // Видалення з форми
+                label1.Dispose(); // Звільнення ресурсів
+                label1 = null; // Очищення посилання на метку
             }
         }
     }

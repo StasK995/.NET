@@ -35,6 +35,7 @@ namespace Task_1
                 if (control is TextBox)
                 {
                     ((TextBox)control).Clear();
+                    ((TextBox)control).Location = new Point(355, control.Location.Y);
                 }
             }
 
