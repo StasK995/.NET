@@ -12,6 +12,9 @@ namespace Task_2
 {
     public partial class Form1 : Form
     {
+
+        private readonly string[] city = { "Бухарест", "Клуж-Напока", "Тімішоара", "Ясси", "Брашов", "Сібіу","City1" };
+
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +24,7 @@ namespace Task_2
         }
         public void InitializeComboBox()
         {
-            string[] city = { "Бухарест", "Клуж-Напока", "Тімішоара", "Ясси", "Брашов", "Сібіу" };
+            //string[] city = { "Бухарест", "Клуж-Напока", "Тімішоара", "Ясси", "Брашов", "Сібіу" };
             ComboBox comboBox = new ComboBox()
             {
                 Location = new Point(30, 30),
@@ -33,7 +36,7 @@ namespace Task_2
         }
         public void InitializeListBox()
         {
-            string[] city = { "Бухарест", "Клуж-Напока", "Тімішоара", "Ясси", "Брашов", "Сібіу" };
+            //string[] city = { "Бухарест", "Клуж-Напока", "Тімішоара", "Ясси", "Брашов", "Сібіу" };
             ListBox listBox = new ListBox()
             {
                 Location = new Point(260, 30),

@@ -13,7 +13,7 @@ namespace Task_1
 {
     public partial class Form1 : Form
     {
-        private static double UAHToJPY = 3.63;
+        private static decimal UAHToJPY = 3.63m;
         public Form1()
         {
             InitializeComponent();
@@ -22,8 +22,8 @@ namespace Task_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double UAH = double.Parse(textBox1.Text);
-            double resulr = UAH * UAHToJPY;
+            var UAH = decimal.Parse(textBox1.Text);
+            var resulr = UAH * UAHToJPY;
             label2.Text = "Ціна в японських єнах = " + resulr;
         }
 

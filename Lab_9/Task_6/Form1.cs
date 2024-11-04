@@ -13,11 +13,11 @@ namespace Task_6
 {
     public partial class Form1 : Form
     {
-        public const double UahToEuro = 0.0223;
-        public const double EuroToUah = 44.7960;
-        public const double MainCost = 450;
-        public double ResultCost = 0;
-        public double AddCost = 0;
+        public const decimal UahToEuro = 0.0223m;
+        public const decimal EuroToUah = 1/UahToEuro;
+        public const decimal MainCost = 450m;
+        public decimal ResultCost = 0m;
+        public decimal AddCost = 0m;
 
         public Form1()
         {
@@ -42,14 +42,14 @@ namespace Task_6
         {
             AddCost = 0;
             Count();
-            double MainUero = MainCost;
+            decimal MainUero = MainCost;
             MainUero *= UahToEuro;
             label2.Text = $"Базова вартість квитка: {MainUero} Euro";
 
-            double EuroAdd = AddCost * UahToEuro;
+            decimal EuroAdd = AddCost * UahToEuro;
             label3.Text = $"Вартість додаткових послуг: {EuroAdd} Euro";
             ResultCost = AddCost + MainCost;
-            double EuroResult = ResultCost * UahToEuro;
+            decimal EuroResult = ResultCost * UahToEuro;
             label4.Text = $"Загальна вартість: {EuroResult} Euro";
         }
 

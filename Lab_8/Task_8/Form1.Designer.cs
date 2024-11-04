@@ -48,31 +48,31 @@
             this.item3ToolStripMenuItem,
             this.item4ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
             // 
             // item1ToolStripMenuItem
             // 
             this.item1ToolStripMenuItem.Name = "item1ToolStripMenuItem";
-            this.item1ToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.item1ToolStripMenuItem.Text = "Пункт 1";
+            this.item1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.item1ToolStripMenuItem.Text = "Yellow";
             // 
             // item2ToolStripMenuItem
             // 
             this.item2ToolStripMenuItem.Name = "item2ToolStripMenuItem";
-            this.item2ToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.item2ToolStripMenuItem.Text = "Пункт 2";
+            this.item2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.item2ToolStripMenuItem.Text = "Red";
             // 
             // item3ToolStripMenuItem
             // 
             this.item3ToolStripMenuItem.Name = "item3ToolStripMenuItem";
-            this.item3ToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.item3ToolStripMenuItem.Text = "Пункт 3";
+            this.item3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.item3ToolStripMenuItem.Text = "White";
             // 
             // item4ToolStripMenuItem
             // 
             this.item4ToolStripMenuItem.Name = "item4ToolStripMenuItem";
-            this.item4ToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.item4ToolStripMenuItem.Text = "Пункт 4";
+            this.item4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.item4ToolStripMenuItem.Text = "Purple";
             // 
             // label1
             // 

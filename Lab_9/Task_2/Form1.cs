@@ -12,8 +12,8 @@ namespace Task_2
 {
     public partial class Form1 : Form
     {
-        private static double UAHToJPY = 3.63;
-        private static double JPYtoUAH = 0.28;
+        private static decimal UAHToJPY = 3.63m;
+        private static decimal JPYtoUAH = 1/UAHToJPY;
 
         public Form1()
         {
@@ -24,16 +24,16 @@ namespace Task_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double UAH = double.Parse(textBox1.Text);
-            double resulr = UAH * UAHToJPY;
-            textBox2.Text = resulr.ToString();
+            var UAH = decimal.Parse(textBox1.Text);
+            decimal resulr = UAH * UAHToJPY;
+            textBox2.Text = resulr.ToString("F2");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            double UAH = double.Parse(textBox2.Text);
-            double resulr = UAH * JPYtoUAH;
-            textBox1.Text = resulr.ToString();
+            var UAH = decimal.Parse(textBox2.Text);
+            decimal resulr = UAH * JPYtoUAH;
+            textBox1.Text = resulr.ToString("F2");
         }
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {

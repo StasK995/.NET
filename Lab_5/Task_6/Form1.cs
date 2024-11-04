@@ -23,7 +23,7 @@ namespace Task_6
             {
                 Location = new Point(10, 200),
                 Size = new Size(100, 100),
-                Image = Image.FromFile(@"C:\Users\nik_i\source\repos\Lab_5\Task_5\image4.jpg"),  
+                Image = Image.FromFile(@"..\..\Images\image4.jpg"),  
                 SizeMode = PictureBoxSizeMode.StretchImage,
             };
             this.Controls.Add(Box1);
@@ -32,7 +32,7 @@ namespace Task_6
             {
                 Location = new Point(120, 100),
                 Size = new Size(100, 200),
-                Image = Image.FromFile(@"C:\Users\nik_i\source\repos\Lab_5\Task_5\image1.png"), 
+                Image = Image.FromFile(@"..\..\Images\image1.png"), 
                 SizeMode = PictureBoxSizeMode.StretchImage,
             };
             this.Controls.Add(Box2);
@@ -41,7 +41,7 @@ namespace Task_6
             {
                 Location = new Point(230, 100),
                 Size = new Size(100, 200),
-                Image = Image.FromFile(@"C:\Users\nik_i\source\repos\Lab_5\Task_5\image2.png"), 
+                Image = Image.FromFile(@"..\..\Images\image2.png"), 
                 SizeMode = PictureBoxSizeMode.StretchImage,
             };
             this.Controls.Add(Box3);
@@ -50,7 +50,7 @@ namespace Task_6
             {
                 Location = new Point(340, 100),
                 Size = new Size(100, 200),
-                Image = Image.FromFile(@"C:\Users\nik_i\source\repos\Lab_5\Task_5\image3.jpg"), 
+                Image = Image.FromFile(@"..\..\Images\image3.jpg"), 
                 SizeMode = PictureBoxSizeMode.StretchImage,
             };
             this.Controls.Add(Box4);
@@ -59,7 +59,7 @@ namespace Task_6
             {
                 Location = new Point(450, 200),
                 Size = new Size(100, 100),
-                Image = Image.FromFile(@"C:\Users\nik_i\source\repos\Lab_5\Task_5\image5.png"), 
+                Image = Image.FromFile(@"..\..\Images\image5.png"), 
                 SizeMode = PictureBoxSizeMode.StretchImage,
             };
             this.Controls.Add(Box5);

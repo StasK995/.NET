@@ -74,10 +74,18 @@ namespace Task_4
             }
 
             // Повідомлення
-            string message = $"Ім'я: {name}\nТелефон: {phone}\nПошта: {email}\nДата відвідування: {visitDate}\n" +
-                             $"Вік: {ageGroup}\nУлюблена кухня: {favoriteCuisine}\n" +
-                             $"Страви, які ви б хотіли побачити: {favoriteDishes}\n" +  
-                             $"Оцінка установи: {selectedOptionsText}"; 
+            StringBuilder messageBuilder = new StringBuilder();
+            messageBuilder.AppendLine($"Ім'я: {name}");
+            messageBuilder.AppendLine($"Телефон: {phone}");
+            messageBuilder.AppendLine($"Пошта: {email}");
+            messageBuilder.AppendLine($"Дата відвідування: {visitDate}");
+            messageBuilder.AppendLine($"Вік: {ageGroup}");
+            messageBuilder.AppendLine($"Улюблена кухня: {favoriteCuisine}");
+            messageBuilder.AppendLine($"Страви, які ви б хотіли побачити: {favoriteDishes}");
+            messageBuilder.AppendLine($"Оцінка установи: {selectedOptionsText}");
+
+            // Получаем окончательное сообщение
+            string message = messageBuilder.ToString();
 
             // Выводим сообщение
             MessageBox.Show(message, "Дані анкети", MessageBoxButtons.OK, MessageBoxIcon.Information);

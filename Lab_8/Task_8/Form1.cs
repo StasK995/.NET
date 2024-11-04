@@ -19,25 +19,9 @@ namespace Task_8
         {
             if (sender is ToolStripMenuItem menuItem)
             {
+                string colorName = menuItem.Text;
                 Color color;
-
-                switch (menuItem.Name)
-                {
-                    case "item1ToolStripMenuItem":
-                        color = Color.Yellow;
-                        break;
-                    case "item2ToolStripMenuItem":
-                        color = Color.Red;
-                        break;
-                    case "item3ToolStripMenuItem":
-                        color = Color.White;
-                        break;
-                    case "item4ToolStripMenuItem":
-                        color = Color.Purple;
-                        break;
-                    default:
-                        return; 
-                }
+                color = Color.FromName(colorName);
 
                 ChangeLabelColors(color);
             }

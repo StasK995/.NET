@@ -25,7 +25,8 @@ namespace Task_13
                     rd1 = new RadioButton
                     {
                         Location = new Point(200, 200), // Встановлення позиції
-                        Text = "Нова радіокнопка", 
+                        Size = new Size(200, 200),
+                        Text = "Нова радіокнопка",
                     };
 
                     this.Controls.Add(rd1); // Додавання RadioButton на форму

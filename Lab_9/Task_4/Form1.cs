@@ -12,8 +12,8 @@ namespace Task_4
 {
     public partial class Form1 : Form
     {
-        private const double RodToKMeters = 198.83838614812;
-        private const double KMetersToRod = 0.00502921;
+        private const decimal RodToKMeters = 198.83838614812m;
+        private const decimal KMetersToRod = 1/RodToKMeters;
 
         public Form1()
         {
@@ -24,25 +24,25 @@ namespace Task_4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(textBox1.Text, out double km))
+            if (decimal.TryParse(textBox1.Text, out decimal km))
             {
-                double result = km * RodToKMeters;
-                textBox2.Text = result.ToString();
+                decimal result = km * RodToKMeters;
+                textBox2.Text = result.ToString("F2");
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(textBox2.Text, out double km))
+            if (decimal.TryParse(textBox2.Text, out decimal km))
             {
-                double result = km * KMetersToRod;
-                textBox1.Text = result.ToString();
+                decimal result = km * KMetersToRod;
+                textBox1.Text = result.ToString("F2");
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(textBox1.Text, out double km) && km > 0)
+            if (decimal.TryParse(textBox1.Text, out decimal km) && km > 0)
             {
                 button1.Enabled = true;
             }
@@ -54,7 +54,7 @@ namespace Task_4
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(textBox2.Text, out double rod) && rod > 0)
+            if (decimal.TryParse(textBox2.Text, out decimal rod) && rod > 0)
             {
                 button2.Enabled = true;
             }
