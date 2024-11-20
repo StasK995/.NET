@@ -7,6 +7,8 @@ namespace Task_4
     public partial class Form1 : Form
     {
         private ListView listView1;
+        const int mont = 12;
+        const int p = 100;
 
         public Form1()
         {
@@ -61,7 +63,7 @@ namespace Task_4
                 }
 
                 
-                double monthlyRate = annualRate / 12 / 100;
+                double monthlyRate = annualRate / mont / p;
                 double monthlyPayment = amount * (monthlyRate * Math.Pow(1 + monthlyRate, term))
                                        / (Math.Pow(1 + monthlyRate, term) - 1);
 

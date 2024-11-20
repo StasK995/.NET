@@ -35,16 +35,16 @@ namespace Task_1
             formB.ShowDialog();
         }
 
-        public void OpenFormC()
+        public void OpenFormE()
         {
-            FormC formС = new FormC();
-            formС.ShowDialog();
+            FormE formE = new FormE();
+            formE.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            th = new Thread(OpenFormC);
+            th = new Thread(OpenFormE);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }

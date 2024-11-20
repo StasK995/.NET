@@ -73,7 +73,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(262, 101);
             this.button3.TabIndex = 4;
-            this.button3.Text = "---> Form_E";
+            this.button3.Text = "---> Form_F";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -81,6 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(886, 450);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
