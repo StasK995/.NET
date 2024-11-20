@@ -20,7 +20,7 @@ namespace Task_5
         {
             Graphics g = e.Graphics;
 
-            // Малюємо основний корпус конденсатора (сірий прямокутник)
+            //  конденсатор
             g.DrawRectangle(Pens.Gray, 70,90,80,20);
 
             g.DrawLine(Pens.Black, 70,130,150,130);
