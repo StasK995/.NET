@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Task_1
 {
@@ -67,6 +68,42 @@ namespace Task_1
                 MessageBox.Show("Файл не знайдений!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public bool ComparePassword()
+        {
+            // Перевірка збігу паролів
+             string password1 = textBox1.Text;
+            string password2 = textBox2.Text;
+
+            // Перевірка довжини пароля
+            if (password1.Length < 12)
+            {
+                MessageBox.Show("Пароль повинен містити мінімум 12 символів.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Перевірка на наявність хоча б однієї букви
+            if (!password1.Any(c => char.IsLetter(c)))
+            {
+                MessageBox.Show("Пароль повинен містити хоча б одну букву.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Перевірка на наявність хоча б однієї цифри
+            if (!password1.Any(c => char.IsDigit(c)))
+            {
+                MessageBox.Show("Пароль повинен містити хоча б одну цифру.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Перевірка на наявність хоча б одного спеціального символа
+            if (!password1.Any(c => "!@#$%^&*()_+={}[]:;\"'<>,.?/-".Contains(c)))
+            {
+                MessageBox.Show("Пароль повинен містити хоча б один спеціальний символ.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true; // Пароль пройшов всі перевірки
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -76,6 +113,10 @@ namespace Task_1
             if (File.Exists(filePath))
             {
                 string[] lines = File.ReadAllLines(filePath);
+                if (!ComparePassword())
+                {
+                    return; 
+                }
                 if (password1 == password2)
                 {
                     if (passwordLineIndex >= 0 && passwordLineIndex < lines.Length)
